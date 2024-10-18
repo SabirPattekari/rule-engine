@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rule Engine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        form {
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: #5cb85c;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #4cae4c;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Create Rule</h2>
+        <form action="/create_rule" method="POST">
+            <label for="rule">Rule:</label>
+            <input type="text" id="rule" name="rule_string" required>
+            <button type="submit">Create Rule</button>
+        </form>
+
+        <h2>Evaluate Rule</h2>
+        <form action="/evaluate_rule" method="POST">
+            <label for="rule_id">Rule ID:</label>
+            <input type="text" id="rule_id" name="rule_id" required>
+            <label for="data">User Data (JSON format):</label>
+            <input type="text" id="data" name="data" required>
+            <button type="submit">Evaluate Rule</button>
+        </form>
+    </div>
+</body>
+</html>
